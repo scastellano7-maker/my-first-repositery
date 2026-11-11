@@ -66,6 +66,15 @@ public class Board {
         winner=other.winner;
     }
     
+    public boolean isFull() {
+        for (int i = 0; i < cell. length; i++) {
+            if (cell[i] == CELL_NONE) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     /**
      * @brief Restituisce il mark del prossimo giocatore che deve muovere.
      * @return La costante CELL_X oppure CELL_O.
@@ -73,7 +82,6 @@ public class Board {
      * La partita non è terminata (vedi #isEnded)
      */
     public int getNextMark() {
-        assert !ended;
         return next;
     }
     
